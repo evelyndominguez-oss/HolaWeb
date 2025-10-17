@@ -1,3 +1,7 @@
-.cambios{
-    color:red
+ 
+ @media(min-width:800px){
+    h1{
+        font-size: 80px;
+        color:pink;
+    }
 }
