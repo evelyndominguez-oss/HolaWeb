@@ -1,7 +1,13 @@
-H1 {
-    font-size: 20px;
+
+.container{
+    display: flex;
+    border: 2px solid #f10404;
+    padding: 20px;
 
 }
-.cambios{
-    color:red
+
+.item{
+    background: red;
+    padding: 20px;
+    flex: 1;
 }
