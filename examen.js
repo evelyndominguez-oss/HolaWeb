@@ -208,71 +208,54 @@ const catalogo = [
   { nombre: "recogedor", precio: 120, categoria: "hogar", imagen: "imagenes/im42.jpg" }
 ];
 
+let actual = 0;
 
-let tabla1 = "<table border='1' cellspacing='0' cellpadding='5'>";
-tabla1 += "<tr><th>Nombre</th><th>Precio</th><th>Categoría</th></tr>";
-
-for (let p of catalogo) { 
-  tabla1 += `
-    <tr>
-      <td>${p.nombre}</td>
-      <td>$${p.precio}</td>
-      <td>${p.categoria}</td>
-    </tr>`;
-}
-
-tabla1 += "</table>";
-document.getElementById("control1").innerHTML = tabla1;
-
-// Mostrar productos (sin imagen)
 function mostrarProductos(arreglo) {
-  let tabla2 = "";
+  let html = "";
   for (let p of arreglo) {
-    tabla2 += `
+    html += `
       <div class="producto">
         <h3>${p.nombre}</h3>
         <p>Precio: $${p.precio}</p>
         <p>Categoría: ${p.categoria}</p>
       </div>
-      <hr>`;
+    `;
   }
-  document.getElementById("control2").innerHTML = tabla2;
+  document.getElementById("control2").innerHTML = html;
 }
 
 mostrarProductos(catalogo);
 
+document.getElementById("btnTecnologia").addEventListener("click", () => {
+  mostrarProductos(catalogo.filter(p => p.categoria === "tecnologia"));
+});
 
-document.getElementById("eje1").addEventListener("click", () => {
-  const filtrados = catalogo.filter(p => p.categoria === "tecnologia");
+document.getElementById("btnDulces").addEventListener("click", () => {
+  mostrarProductos(catalogo.filter(p => p.categoria === "dulces"));
+});
+
+document.getElementById("btnMenores500").addEventListener("click", () => {
+  mostrarProductos(catalogo.filter(p => p.precio <= 500));
+});
+
+document.getElementById("btnOrdenMenor").addEventListener("click", () => {
+  const filtrados = catalogo.filter(p => p.precio <= 500)
+  .sort((a, b) => a.precio - b.precio);
   mostrarProductos(filtrados);
 });
 
-
-document.getElementById("eje2").addEventListener("click", () => {
-  const filtrados = catalogo.filter(p => p.categoria === "belleza");
+document.getElementById("btnEntre500y2000").addEventListener("click", () => {
+  const filtrados = catalogo.filter(p => p.precio >= 501 && p.precio <= 2000)
+  .sort((a, b) => a.precio - b.precio);
   mostrarProductos(filtrados);
 });
 
-document.getElementById("eje3").addEventListener("click", () => {
-  const filtrados = catalogo.filter(p => p.precio <= 500);
-  mostrarProductos(filtrados);
+document.getElementById("btnSiguiente").addEventListener("click", () => {
+  actual++;
+  if (actual >= catalogo.length) actual = 0;
+  mostrarProductos([catalogo[actual]]);
 });
 
-document.getElementById("eje4").addEventListener("click", () => {
-  const filtrados = catalogo
-    .filter(p => p.precio <= 500)
-    .sort((a, b) => a.precio - b.precio);
-  mostrarProductos(filtrados);
-});
-
-document.getElementById("eje5").addEventListener("click", () => {
-  const filtrados = catalogo
-    .filter(p => p.precio >= 501 && p.precio <= 2000)
-    .sort((a, b) => a.precio - b.precio);
-  mostrarProductos(filtrados);
-});
-
-document.getElementById("eje7").addEventListener("click", () => {
+document.getElementById("btnTodos").addEventListener("click", () => {
   mostrarProductos(catalogo);
 });
-
