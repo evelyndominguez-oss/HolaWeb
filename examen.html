@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <title>Catálogo de Productos</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo</title>
+  <link rel="stylesheet" href="examen.css">
 </head>
 <body>
-  <div class="botones">
-    <button onclick=""Mostrar solo ropa </button>
-    <button onclick=""Ordenar del más caro al más barato>boton</button>
-    <button onclick=""Ocultar la categoria de tencologia</button>
-    <button onclick="Mostrar solo el objeto con el nombre "plancha" pero no "plancha" de czbello</button>
-    <button onclick="Mostar solo la categoria "hogar" con un valor mas alla de "743"</button>
-    <button onclick=""Modtrar el costo total de categoria "tecnologia" "tecn/button>
-    <button onclick=""Mostar los Precios entre $500 y $2000</button>
-    <button onclick=""Mostrar Promedio de precios de la categoria ropa </button>
-  </div>
+  <h1>Catálogo de Productos</h1>
 
-  <div id="catalogo" class="contenedor"></div>
+  <div class="lista">
+    <div id="control1">
+      <button id="btnTecnologia">Tecnología</button>
+      <button id="btnDulces">Dulces</button>
+      <button id="btnMenores500">Menores a $500</button>
+      <button id="btnOrdenMenor">Ordenar Menores</button>
+      <button id="btnEntre500y2000">$501 - $2000</button>
+      <button id="btnSiguiente">Siguiente Producto</button>
+      <button id="btnTodos">Mostrar Todos</button>
+    </div>
+
+    <div id="control2"></div>
+  </div>
 
   <script src="examen.js"></script>
 </body>
 </html>
-
