@@ -1,3 +1,65 @@
-body{
-background-color:blue
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f3f3f3;
+  text-align: center;
+  margin: 20px;
+}
+
+h1 {
+  color: #333;
+}
+
+.lista {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+#control1 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+#control1 button {
+  padding: 10px 15px;
+  border: none;
+  background-color:pink;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#control1 button:hover {
+  background-color: #0056b3;
+}
+
+#control2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  width: 90%;
+}
+
+.producto {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px;
+  width: 180px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.producto h3 {
+  font-size: 16px;
+  color: #333;
+}
+
+.producto p {
+  margin: 5px 0;
+  color: #666;
 }
